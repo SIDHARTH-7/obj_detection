@@ -36,7 +36,7 @@ class ObjectDetection:
 
             # Preprocess frame
             image_np_expanded = np.expand_dims(frame, axis=0)
-
+            frame = cv2.resize(frame, (640, 480))
             # Perform inference
             image_tensor = detection_graph.get_tensor_by_name('image_tensor:0')
             boxes = detection_graph.get_tensor_by_name('detection_boxes:0')
